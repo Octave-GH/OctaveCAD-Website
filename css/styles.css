@@ -82,7 +82,7 @@ img {
     transform: translateY(-3px);
 }
 
-/* Header */
+/* Header and Navigation */
 header {
     background-color: var(--primary-color);
     position: fixed;
@@ -91,49 +91,44 @@ header {
     left: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    height: 60px; /* Fixed height */
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 15px;
-    max-height: 60px;
+    height: 100%;
+    padding: 0 15px;
 }
 
 .logo {
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
-    max-width: 200px;
 }
 
-header .logo img {
-    max-height: 25px !important;
+.logo img {
+    height: 30px;
     width: auto;
-    transition: transform 0.3s ease;
 }
 
-.logo img:hover {
-    transform: scale(1.05);
-}
-
-.logo h1 {
-    color: var(--text-light);
-    font-size: 1.8rem;
-    font-weight: 700;
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 nav ul {
     display: flex;
-}
-
-nav ul li {
-    margin-left: 30px;
+    align-items: center;
+    gap: 30px;
 }
 
 nav ul li a {
     color: var(--text-light);
     font-weight: 500;
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
@@ -143,21 +138,19 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    background: var(--primary-color);
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    padding-top: 60px; /* Match header height */
     display: flex;
     align-items: center;
-    text-align: center;
-    color: var(--text-light);
-    padding-top: 70px; /* Added to account for fixed header */
-    position: relative;
 }
 
 .hero-content {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    z-index: 1;
-    position: relative;
+    text-align: center;
+    padding: 0 15px;
 }
 
 .hero h1 {
@@ -423,33 +416,37 @@ footer {
 }
 
 @media (max-width: 768px) {
+    header {
+        height: auto;
+    }
+
+    header .container {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        height: 25px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
     
     .hero p {
         font-size: 1.1rem;
-    }
-    
-    header .container {
-        flex-direction: column;
-    }
-    
-    .logo img {
-        max-height: 40px;
-        margin-bottom: 10px;
-    }
-    
-    nav ul {
-        margin-top: 20px;
-    }
-    
-    nav ul li {
-        margin: 0 10px;
-    }
-    
-    .section-title {
-        font-size: 2rem;
     }
 }
 
