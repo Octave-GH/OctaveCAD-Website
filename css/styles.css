@@ -242,6 +242,17 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    background-color: rgba(52, 152, 219, 0.9);
+}
+
+.btn-small:hover {
+    background-color: rgba(44, 62, 80, 0.9);
+}
+
 /* About Section */
 .about {
     padding: 100px 0;

@@ -1,0 +1,299 @@
+/* Project Detail Page Styles */
+.project-detail {
+    padding: 120px 0 80px;
+}
+
+.back-link {
+    margin-bottom: 20px;
+}
+
+.back-link a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-link a i {
+    margin-right: 8px;
+}
+
+.back-link a:hover {
+    color: var(--primary-color);
+    transform: translateX(-5px);
+}
+
+.project-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.project-description {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+/* Interactive Model */
+.interactive-model {
+    margin-bottom: 60px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.model-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.model-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+/* Hotspot Styles */
+.hotspot {
+    position: absolute;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hotspot:hover {
+    transform: scale(1.2);
+}
+
+.hotspot-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+}
+
+.hotspot-ring {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.7;
+    animation: pulse 2s infinite;
+}
+
+.info-box {
+    position: absolute;
+    width: 250px;
+    background: rgba(44, 62, 80, 0.95);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    top: 40px;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 20;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hotspot:hover .info-box {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.info-box h4 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.info-box p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Positioning info boxes based on hotspot location */
+.hotspot[data-info="bearing"] .info-box {
+    left: -110px;
+}
+
+.hotspot[data-info="housing"] .info-box {
+    left: -220px;
+}
+
+.hotspot[data-info="motor"] .info-box {
+    left: -110px;
+    top: -150px;
+}
+
+.hotspot[data-info="connector"] .info-box {
+    left: 30px;
+}
+
+/* Connection Lines */
+.connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.connection {
+    fill: none;
+    stroke: var(--secondary-color);
+    stroke-width: 0.5;
+    stroke-dasharray: 5;
+    stroke-linecap: round;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Show lines on hover */
+.hotspot[data-info="bearing"]:hover ~ .connection-lines .bearing-connector,
+.hotspot[data-info="bearing"]:hover ~ .connection-lines .bearing-housing,
+.hotspot[data-info="housing"]:hover ~ .connection-lines .bearing-housing,
+.hotspot[data-info="housing"]:hover ~ .connection-lines .housing-motor,
+.hotspot[data-info="motor"]:hover ~ .connection-lines .housing-motor,
+.hotspot[data-info="motor"]:hover ~ .connection-lines .motor-connector,
+.hotspot[data-info="connector"]:hover ~ .connection-lines .bearing-connector,
+.hotspot[data-info="connector"]:hover ~ .connection-lines .motor-connector {
+    opacity: 0.8;
+    stroke-dashoffset: 1000;
+    animation: dash 30s linear infinite;
+}
+
+/* Project Specs */
+.project-specs {
+    margin-bottom: 60px;
+}
+
+.project-specs h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.spec-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.spec-item h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+/* Project Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-item p {
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-detail {
+        padding: 100px 0 60px;
+    }
+    
+    .project-title {
+        font-size: 2rem;
+    }
+    
+    .info-box {
+        width: 200px;
+    }
+    
+    .hotspot[data-info="bearing"] .info-box,
+    .hotspot[data-info="housing"] .info-box,
+    .hotspot[data-info="motor"] .info-box,
+    .hotspot[data-info="connector"] .info-box {
+        left: -90px;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-title {
+        font-size: 1.8rem;
+    }
+    
+    .interactive-model {
+        padding: 15px;
+    }
+} 
