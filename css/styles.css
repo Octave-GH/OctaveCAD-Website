@@ -100,6 +100,21 @@ header .container {
     padding: 20px 15px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
 .logo h1 {
     color: var(--text-light);
     font-size: 1.8rem;
@@ -409,6 +424,11 @@ footer {
         flex-direction: column;
     }
     
+    .logo img {
+        max-height: 50px;
+        margin-bottom: 10px;
+    }
+    
     nav ul {
         margin-top: 20px;
     }
@@ -425,6 +445,10 @@ footer {
 @media (max-width: 576px) {
     .hero h1 {
         font-size: 2rem;
+    }
+    
+    .logo img {
+        max-height: 40px;
     }
     
     .services-grid,
