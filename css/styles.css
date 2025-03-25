@@ -90,14 +90,14 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 15px;
+    padding: 12px 15px;
 }
 
 .logo {
@@ -106,7 +106,7 @@ header .container {
 }
 
 .logo img {
-    max-height: 45px;
+    max-height: 35px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -142,26 +142,37 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--text-light);
+    padding-top: 70px; /* Added to account for fixed header */
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
-    max-width: 800px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Services Section */
@@ -460,25 +471,59 @@ footer {
 /* Responsive Logo Sizes */
 @media (min-width: 992px) {
     .logo img {
-        max-height: 45px; /* Desktop size */
+        max-height: 35px; /* Desktop size */
     }
 }
 
 @media (max-width: 991px) and (min-width: 769px) {
     .logo img {
-        max-height: 40px; /* Tablet landscape size */
+        max-height: 32px; /* Tablet landscape size */
     }
 }
 
 @media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+    
     .logo img {
-        max-height: 40px; /* Tablet portrait size */
-        margin-bottom: 10px;
+        max-height: 30px; /* Tablet portrait size */
+        margin-bottom: 8px;
+    }
+    
+    nav ul {
+        margin-top: 10px;
+    }
+    
+    nav ul li {
+        margin: 0 8px;
+    }
+    
+    .hero {
+        padding-top: 90px; /* Increase padding to account for taller header on mobile */
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 576px) {
     .logo img {
-        max-height: 35px; /* Mobile size */
+        max-height: 28px; /* Mobile size */
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        max-width: 100%;
     }
 } 
