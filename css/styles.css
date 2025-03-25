@@ -33,13 +33,29 @@ body {
     justify-content: center;
     text-align: center;
     padding: 0 20px;
-    background-color: var(--primary-color);
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../images/Hero Photo 1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, var(--primary-color));
+    pointer-events: none;
+    z-index: 1;
 }
 
 .logo {
     position: absolute;
     top: 20px;
     left: 40px;
+    z-index: 2;
 }
 
 .logo img {
@@ -49,14 +65,17 @@ body {
 
 .hero nav {
     position: absolute;
-    top: 50px;
+    top: 40px;
     right: 40px;
+    z-index: 2;
 }
 
 .hero nav ul {
     display: flex;
     gap: 40px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .hero nav ul li a {
@@ -73,8 +92,9 @@ body {
 }
 
 .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
-    margin-top: -40px; /* Offset to center content better now that nav is absolute */
 }
 
 .hero h1 {
@@ -355,5 +375,153 @@ footer {
 
     .submit-btn {
         width: 100%;
+    }
+}
+
+/* About Section */
+.about-section {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.about-text .intro {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.expertise {
+    margin-bottom: 60px;
+}
+
+.expertise h2,
+.approach h2,
+.cta-section h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.expertise ul {
+    list-style: none;
+    padding: 0;
+}
+
+.expertise ul li {
+    margin-bottom: 30px;
+}
+
+.skill-title {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0056b3;
+}
+
+.expertise ul li p {
+    font-size: 16px;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.approach {
+    margin-bottom: 60px;
+}
+
+.approach p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-section .btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cta-section .btn:hover {
+    background-color: #003d82;
+}
+
+/* Responsive Design for About Page */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .about-content h1 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .about-text .intro {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    .expertise h2,
+    .approach h2,
+    .cta-section h2 {
+        font-size: 22px;
+    }
+
+    .skill-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-section {
+        padding: 40px 0;
+    }
+
+    .about-content h1 {
+        font-size: 26px;
+    }
+
+    .about-text .intro {
+        font-size: 16px;
+    }
+
+    .expertise ul li {
+        margin-bottom: 25px;
+    }
+
+    .cta-section {
+        padding: 30px 20px;
     }
 } 
