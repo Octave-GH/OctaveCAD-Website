@@ -234,9 +234,25 @@ body {
 footer {
     padding: 20px 0;
     text-align: center;
-    opacity: 0.8;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--primary-color));
+    pointer-events: none;
+}
+
+footer .container p {
+    opacity: 0.6;
+    font-size: 14px;
 }
 
 /* Contact Section */
@@ -346,6 +362,14 @@ footer {
     .contact h2 {
         font-size: 30px;
         margin-bottom: 40px;
+    }
+
+    footer {
+        padding: 15px 0;
+    }
+
+    footer .container p {
+        font-size: 12px;
     }
 }
 
@@ -533,7 +557,18 @@ footer {
     position: relative;
     padding-top: 60px;
     min-height: 100vh;
-    background-color: #fff;
+    background-color: #f8f8f8;
+}
+
+.contact-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.05));
+    pointer-events: none;
 }
 
 .contact-page .logo {
@@ -577,6 +612,8 @@ footer {
 }
 
 .contact-page .container {
+    position: relative;
+    z-index: 1;
     max-width: 800px;
     margin: 0 auto;
     padding: 120px 20px 0;
@@ -752,4 +789,191 @@ header nav ul li a {
 header nav ul li a:hover,
 header nav ul li a.active {
     opacity: 0.8;
+}
+
+/* Portfolio Page */
+.portfolio-page {
+    position: relative;
+    padding-top: 60px;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.portfolio-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.05));
+    pointer-events: none;
+}
+
+.portfolio-page .logo {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 2;
+}
+
+.portfolio-page .logo img {
+    height: 100px;
+    width: auto;
+}
+
+.portfolio-page nav {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 2;
+}
+
+.portfolio-page nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio-page nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-page nav ul li a:hover {
+    opacity: 0.7;
+}
+
+.portfolio-page .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 60px;
+}
+
+.portfolio-page h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #000;
+    text-align: center;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 16/9;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.portfolio-overlay p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .portfolio-page .logo {
+        top: 20px;
+        left: 20px;
+    }
+
+    .portfolio-page .logo img {
+        height: 80px;
+    }
+
+    .portfolio-page nav {
+        top: 35px;
+        right: 20px;
+    }
+
+    .portfolio-page nav ul {
+        gap: 20px;
+    }
+
+    .portfolio-page .container {
+        padding-top: 100px;
+    }
+
+    .portfolio-page h1 {
+        font-size: 3rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-page .logo img {
+        height: 60px;
+    }
+
+    .portfolio-page nav {
+        top: 30px;
+    }
+
+    .portfolio-page nav ul {
+        gap: 15px;
+    }
+
+    .portfolio-page nav ul li a {
+        font-size: 12px;
+    }
+
+    .portfolio-page h1 {
+        font-size: 2.5rem;
+    }
 } 
