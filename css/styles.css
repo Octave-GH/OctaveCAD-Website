@@ -1,12 +1,12 @@
 /* Global Styles */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --text-color: #333;
-    --text-light: #fff;
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --accent-color: #0a3d62;
+    --light-color: #f5f5f5;
+    --dark-color: #121212;
+    --text-color: #333333;
+    --text-light: #ffffff;
 }
 
 * {
@@ -60,7 +60,7 @@ img {
     position: absolute;
     width: 100px;
     height: 4px;
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -68,7 +68,7 @@ img {
 
 .btn {
     display: inline-block;
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     color: var(--text-light);
     padding: 12px 30px;
     border-radius: 5px;
@@ -78,7 +78,7 @@ img {
 }
 
 .btn:hover {
-    background-color: var(--primary-color);
+    background-color: #000000;
     transform: translateY(-3px);
 }
 
@@ -106,7 +106,7 @@ header .container {
 }
 
 .logo img {
-    max-height: 60px;
+    max-height: 45px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -136,7 +136,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color);
 }
 
 /* Hero Section */
@@ -192,7 +192,7 @@ nav ul li a:hover {
 
 .service-card i {
     font-size: 3rem;
-    color: var(--secondary-color);
+    color: var(--accent-color);
     margin-bottom: 20px;
 }
 
@@ -261,11 +261,11 @@ nav ul li a:hover {
     padding: 8px 15px;
     font-size: 0.8rem;
     margin-top: 15px;
-    background-color: rgba(52, 152, 219, 0.9);
+    background-color: var(--accent-color);
 }
 
 .btn-small:hover {
-    background-color: rgba(44, 62, 80, 0.9);
+    background-color: #000000;
 }
 
 /* About Section */
@@ -305,7 +305,7 @@ nav ul li a:hover {
 }
 
 .skills span {
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     color: var(--text-light);
     padding: 8px 15px;
     border-radius: 5px;
@@ -339,14 +339,14 @@ nav ul li a:hover {
 
 .contact-item i {
     font-size: 1.5rem;
-    color: var(--secondary-color);
+    color: var(--accent-color);
     margin-right: 20px;
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(52, 152, 219, 0.1);
+    background-color: rgba(10, 61, 98, 0.1);
     border-radius: 50%;
 }
 
@@ -358,7 +358,7 @@ nav ul li a:hover {
 .social-links a {
     width: 40px;
     height: 40px;
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     color: var(--text-light);
     display: flex;
     align-items: center;
@@ -369,7 +369,7 @@ nav ul li a:hover {
 }
 
 .social-links a:hover {
-    background-color: var(--primary-color);
+    background-color: #000000;
     transform: translateY(-5px);
 }
 
@@ -425,7 +425,7 @@ footer {
     }
     
     .logo img {
-        max-height: 50px;
+        max-height: 40px;
         margin-bottom: 10px;
     }
     
@@ -448,11 +448,37 @@ footer {
     }
     
     .logo img {
-        max-height: 40px;
+        max-height: 35px;
     }
     
     .services-grid,
     .portfolio-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive Logo Sizes */
+@media (min-width: 992px) {
+    .logo img {
+        max-height: 45px; /* Desktop size */
+    }
+}
+
+@media (max-width: 991px) and (min-width: 769px) {
+    .logo img {
+        max-height: 40px; /* Tablet landscape size */
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        max-height: 40px; /* Tablet portrait size */
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo img {
+        max-height: 35px; /* Mobile size */
     }
 } 
