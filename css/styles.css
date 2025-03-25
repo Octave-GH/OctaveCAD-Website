@@ -24,45 +24,10 @@ body {
     padding: 0 30px;
 }
 
-/* Header */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 20px 0;
-    background-color: var(--primary-color);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    height: 35px;
-    width: auto;
-}
-
-nav ul {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-}
-
-nav ul li a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
 /* Hero Section */
 .hero {
-    height: 100vh;
+    position: relative;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,8 +36,45 @@ nav ul li a {
     background-color: var(--primary-color);
 }
 
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+}
+
+.hero nav {
+    position: absolute;
+    top: 50px;
+    right: 40px;
+}
+
+.hero nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.hero nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.hero nav ul li a:hover {
+    opacity: 0.8;
+}
+
 .hero-content {
     max-width: 800px;
+    margin-top: -40px; /* Offset to center content better now that nav is absolute */
 }
 
 .hero h1 {
@@ -215,10 +217,92 @@ footer {
     opacity: 0.8;
 }
 
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.required {
+    color: #dc3545;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-group.full-width {
+    margin-bottom: 30px;
+}
+
+.response-time {
+    margin-bottom: 30px;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #c82333;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+    .hero nav {
+        top: 40px;
     }
 
     nav ul {
@@ -232,11 +316,24 @@ footer {
     .hero p {
         font-size: 18px;
     }
+
+    .contact {
+        padding: 60px 0;
+    }
+
+    .contact h2 {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
 }
 
 @media (max-width: 576px) {
     .logo img {
-        height: 30px;
+        height: 60px;
+    }
+
+    .hero nav {
+        top: 30px;
     }
 
     nav ul {
@@ -245,5 +342,18 @@ footer {
 
     nav ul li a {
         font-size: 12px;
+    }
+
+    .contact {
+        padding: 40px 0;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        width: 100%;
     }
 } 
