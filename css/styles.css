@@ -85,12 +85,9 @@ img {
 /* Header */
 header {
     background-color: var(--primary-color);
-    position: fixed;
     width: 100%;
-    top: 0;
-    left: 0;
     z-index: 1000;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 header .container {
@@ -105,7 +102,7 @@ header .container {
 }
 
 .logo img {
-    height: 32px;
+    height: 40px;
     width: auto;
     transition: opacity 0.3s ease;
 }
@@ -139,9 +136,8 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
     background-color: var(--primary-color);
-    padding-top: 50px; /* Match header height */
+    padding: 80px 0;
     display: flex;
     align-items: center;
 }
@@ -152,6 +148,7 @@ nav ul li a:hover {
     margin: 0 auto;
     text-align: center;
     padding: 0 15px;
+    color: var(--text-light);
 }
 
 .hero h1 {
@@ -408,7 +405,7 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        padding: 8px 0;
+        padding: 12px 0;
     }
 
     header .container {
@@ -417,7 +414,7 @@ footer {
     }
 
     .logo img {
-        height: 28px;
+        height: 35px;
     }
 
     nav ul {
@@ -427,7 +424,7 @@ footer {
 
 @media (max-width: 576px) {
     .logo img {
-        height: 24px;
+        height: 30px;
     }
 
     nav ul {
