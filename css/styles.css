@@ -142,9 +142,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    background: var(--primary-color);
     display: flex;
     align-items: center;
     text-align: center;
