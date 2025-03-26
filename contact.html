@@ -30,29 +30,7 @@
             <p class="contact-intro-text">Have a project in mind or need technical drafting expertise? We're here to help you create exceptional CAD solutions.</p>
         </div>
         
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="info-details">
-                        <h3>Email Us</h3>
-                        <p>jon.bertoldo@octavecad.com</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="info-details">
-                        <h3>Office</h3>
-                        <p>123 Design Street<br>San Francisco, CA 94103</p>
-                    </div>
-                </div>
-            </div>
-            
-            <form class="contact-form">
+            <form class="contact-form" action="https://formspree.io/f/xnnpzwqk" method="POST">
                 <div class="form-group">
                     <input type="text" id="name" name="name" placeholder=" " required>
                     <label for="name">NAME</label>
@@ -73,6 +51,9 @@
                     <label for="message">MESSAGE</label>
                 </div>
 
+                <input type="hidden" name="_subject" value="New Contact Form Submission from OctaveCAD">
+                <input type="hidden" name="_next" value="https://octavecad.com/thank-you.html">
+                
                 <div class="form-footer">
                     <div class="terms-check">
                         <input type="checkbox" id="terms" name="terms" required>
