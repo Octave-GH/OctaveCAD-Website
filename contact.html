@@ -6,6 +6,7 @@
     <title>Contact - OctaveCAD</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="contact-page">
     <div class="logo">
@@ -18,48 +19,77 @@
             <li><a href="index.html#work">WORK</a></li>
             <li><a href="portfolio.html">PORTFOLIO</a></li>
             <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html" class="active">CONTACT</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <h1>Need our help?</h1>
+        <div class="contact-header">
+            <span class="section-tag">GET IN TOUCH</span>
+            <h1>Let's Start<br>A Conversation</h1>
+            <p class="contact-intro-text">Have a project in mind or need technical drafting expertise? We're here to help you create exceptional CAD solutions.</p>
+        </div>
         
-        <div class="contact-form">
-            <form>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Name <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company <span class="required">*</span></label>
-                        <input type="text" id="company" name="company" required>
+                    <div class="info-details">
+                        <h3>Email Us</h3>
+                        <p>jon.bertoldo@octavecad.com</p>
                     </div>
                 </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-
-                    <div class="form-group">
-                        <label for="postcode">Postcode <span class="required">*</span></label>
-                        <input type="text" id="postcode" name="postcode" required>
+                    <div class="info-details">
+                        <h3>Office</h3>
+                        <p>123 Design Street<br>San Francisco, CA 94103</p>
                     </div>
                 </div>
-
-                <div class="form-group full-width">
-                    <label for="description">Description <span class="required">*</span></label>
-                    <textarea id="description" name="description" rows="6" required></textarea>
+            </div>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder=" " required>
+                    <label for="name">NAME</label>
                 </div>
 
-                <p class="response-time">We respond lightning-fast.</p>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">EMAIL</label>
+                </div>
 
-                <button type="submit" class="submit-btn">Submit</button>
+                <div class="form-group">
+                    <input type="text" id="subject" name="subject" placeholder=" " required>
+                    <label for="subject">SUBJECT</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder=" " required></textarea>
+                    <label for="message">MESSAGE</label>
+                </div>
+
+                <div class="form-footer">
+                    <div class="terms-check">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I accept the <a href="#">Terms & Conditions</a></label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>SEND MESSAGE</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
             </form>
         </div>
+    </div>
+
+    <div class="page-decoration">
+        <div class="decoration-circle"></div>
+        <div class="decoration-line"></div>
     </div>
 
     <footer>
