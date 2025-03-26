@@ -51,8 +51,14 @@
                     <label for="message">MESSAGE</label>
                 </div>
 
+                <!-- Honeypot field to prevent spam -->
+                <div style="display: none;">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                </div>
+
                 <input type="hidden" name="_subject" value="New Contact Form Submission from OctaveCAD">
-                <input type="hidden" name="_next" value="https://octavecad.com/thank-you.html">
+                <input type="hidden" name="_next" value="thank-you.html">
+                <input type="hidden" name="_template" value="table">
                 
                 <div class="form-footer">
                     <div class="terms-check">
